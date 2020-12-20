@@ -1,0 +1,25 @@
+
+WindowManager:
+    MainWindow:
+
+#MainWindow is the first window displayed.
+<MainWindow>
+    name: "main"
+    FloatLayout:
+
+        Label:
+            pos_hint: {"x":0, "top":1}
+            text: "Template"
+            font_size: 40
+            #colors are in rgba format
+            color: 0,0,0,1
+
+        Button:
+            font_size: 50
+            pos_hint: {"x":0.35, "y": 0.03}
+            size_hint: 0.3,0.3
+            text: "START"
+            #root refers to the python file. The button tells the app to change the window object from the main build window to the window named second.
+            on_release:
+                app.root.current = "ready"
+                root.manager.transition.direction = "left"
